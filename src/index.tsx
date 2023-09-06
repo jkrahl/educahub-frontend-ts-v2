@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Auth0Provider } from '@auth0/auth0-react'
 import Home from './pages/Home/Home'
 import NavBar from './components/NavBar/NavBar'
+import SearchResults from './pages/SearchResults/SearchResults'
 import {
     createBrowserRouter,
     RouterProvider,
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: '/profile',
-                element: <p>Perfil</p>,
+                path: '/search',
+                element: <SearchResults />,
             },
         ],
     },

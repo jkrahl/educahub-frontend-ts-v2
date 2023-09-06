@@ -29,7 +29,7 @@ export default function NavBar() {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand href="/dashboard">
+                <Navbar.Brand href="/">
                     <img
                         src="/logo.png"
                         alt="EducaHub"
@@ -66,11 +66,9 @@ export default function NavBar() {
                                     className="text-body"
                                 >
                                     <Person />{' '}
-                                    {info.isLoading ? (
-                                        <Nav.Link className="text-body">
-                                            Cargando...
-                                        </Nav.Link>
-                                    ) : (
+                                    {info.isLoading ? 
+                                            'Cargando...'
+                                     : (
                                         info.data?.username
                                     )}
                                 </Nav.Link>
