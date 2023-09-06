@@ -1,7 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Auth0Provider } from '@auth0/auth0-react'
-import App from './App'
+import Home from './pages/Home/Home'
+import NavBar from './components/NavBar/NavBar'
+import {
+    createBrowserRouter,
+    RouterProvider,
+    Outlet,
+} from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
+            {
+                path: '/profile',
+                element: <p>Perfil</p>,
+            },
+        ],
+    },
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -15,7 +42,20 @@ root.render(
                 scope: 'read:current_user update:current_user_metadata',
             }}
         >
-            <App />
+            <QueryClientProvider client={queryClient}>
+                <RouterProvider router={router} />
+            </QueryClientProvider>
         </Auth0Provider>
     </React.StrictMode>
 )
+
+function Layout() {
+    return (
+        <>
+            <NavBar />
+            <div className="container">
+                <Outlet />
+            </div>
+        </>
+    )
+}
