@@ -3,6 +3,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import CommentsPanel from '../../components/CommentsPanel/CommentsPanel'
+import LikeButton from '../../components/LikeButton/LikeButton'
 import IPost from '../../interfaces/Post'
 import styles from './PostView.module.css'
 import { useQuery } from 'react-query'
@@ -76,6 +77,11 @@ export default function PostView() {
                                 </div>
                             </div>
                         )}
+                        <div className={styles.likes}>
+                            <LikeButton
+                                postURL={queryInfo.data?.url as string}
+                            />
+                        </div>
                         {queryInfo.data?.type === 'Document' && (
                             <ButtonGroup>
                                 <Button
