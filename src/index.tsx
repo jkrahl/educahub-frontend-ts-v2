@@ -5,31 +5,27 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import Home from './pages/Home/Home'
 import NavBar from './components/NavBar/NavBar'
 import SearchResults from './pages/SearchResults/SearchResults'
+import PostView from './pages/PostView/PostView'
 import {
     createBrowserRouter,
     RouterProvider,
     Outlet,
+    createRoutesFromElements,
+    Route,
 } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        children: [
-            {
-                path: '/',
-                element: <Home />,
-            },
-            {
-                path: '/search',
-                element: <SearchResults />,
-            },
-        ],
-    },
-])
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/posts/:postURL" element={<PostView />} />
+        </Route>
+    )
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
