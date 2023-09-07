@@ -2,7 +2,7 @@
 import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
-//import CommentsPanel from '@/components/CommentsPanel/CommentsPanel'
+import CommentsPanel from '../../components/CommentsPanel/CommentsPanel'
 import IPost from '../../interfaces/Post'
 import styles from './PostView.module.css'
 import { useQuery } from 'react-query'
@@ -106,7 +106,9 @@ export default function PostView() {
                             <h4>
                                 <span>Comentarios</span>
                             </h4>
-                            <p>Comentarios</p>
+                            <CommentsPanel
+                                postURL={queryInfo.data?.url as string}
+                            />
                         </div>
                     </div>
                 )}
