@@ -1,5 +1,6 @@
 import styles from './Post.module.css'
 import { Link } from 'react-router-dom'
+import External from '../ExternalIcon/ExternalIcon'
 // Post component with props for title, description, user, date, subject, unit and url
 export default function Post({
     type,
@@ -26,16 +27,13 @@ export default function Post({
 
     return (
         <article className={styles.box}>
-            <Link
-                to={'/posts/' + url}
-                style={{ textDecoration: 'none', color: 'black' }}
-            >
                 {type === 'Document' && <Document />}
                 {type === 'Question' && <Question />}
-                {title}
+                <Link to={'/posts/' + url}>
+                    <b>{title}</b><External />
+                </Link>
                 <br />
                 u/{user} · {formattedDate} · {subject} · {unit}
-            </Link>
         </article>
     )
 }
