@@ -49,9 +49,6 @@ export default function NavBar() {
                         <Nav.Link href="/questions" className="text-body">
                             Foro
                         </Nav.Link>
-                        <Nav.Link href="/links" className="text-body">
-                            Links
-                        </Nav.Link>
                         <Nav.Link href="/subjects" className="text-body">
                             Asignaturas
                         </Nav.Link>
