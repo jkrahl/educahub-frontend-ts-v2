@@ -7,6 +7,7 @@ import IPost from '../../interfaces/Post'
 import styles from './PostView.module.css'
 import { useQuery } from 'react-query'
 import { Link, useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 export default function PostView() {
     let params = useParams() as { postURL: string }
@@ -25,6 +26,14 @@ export default function PostView() {
 
     return (
         <main className={styles.main}>
+            <Helmet>
+                <title>
+                    {(queryInfo.data?.title || "Post") + ' - ' +( queryInfo.data?.subject || "EducaHub")}
+                </title>
+                <meta name="description" content={
+                    queryInfo.data?.title + ' - ' + queryInfo.data?.description
+                } />
+            </Helmet>
             <div>
                 {queryInfo.isLoading ? ( // If loading
                     <div className={styles.spinner}>

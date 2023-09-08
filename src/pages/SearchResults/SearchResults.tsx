@@ -3,6 +3,7 @@ import PostsPanel from '../../components/PostPanel/PostPanel'
 import IPost from '../../interfaces/Post'
 import styles from './Search.module.css'
 import { useQuery } from 'react-query'
+import { Helmet } from 'react-helmet'
 
 export default function SearchResults() {
     // Get query from URL
@@ -27,6 +28,12 @@ export default function SearchResults() {
 
     return (
         <main className={styles.main}>
+            <Helmet>
+                <title>{query} - EducaHub</title>
+                <meta name="description" content={
+                    'Resultados de búsqueda de ' + query
+                } />
+            </Helmet>
             <h1 className={styles.title}>EducaHub</h1>
             <div id="buscador" className={styles.center}>
                 <SearchBar />

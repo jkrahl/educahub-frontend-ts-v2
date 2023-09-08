@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import ISubject from '../../interfaces/Subject'
 import styles from './Subjects.module.css'
+import { Helmet } from 'react-helmet'
 
 export default function Subjects() {
     const queryInfo = useQuery('subjects', async () => {
@@ -19,6 +20,12 @@ export default function Subjects() {
 
     return (
         <main>
+            <Helmet>
+                <title>Asignaturas - EducaHub</title>
+                <meta name="description" content={
+                    'Lista de asignaturas de selectividad en Cataluña'
+                } />
+            </Helmet>
             <h1 className={styles.center}>Asignaturas</h1>
             <div>
                 {queryInfo.isLoading ? ( // If loading
