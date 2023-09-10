@@ -1,5 +1,6 @@
 import SearchBar from '../../components/SearchBar/SearchBar'
 import PostsPanel from '../../components/PostPanel/PostPanel'
+import SubjectSelect from '../../components/SubjectSelect/SubjectSelect'
 import IPost from '../../interfaces/Post'
 import styles from './Home.module.css'
 import { useQuery } from 'react-query'
@@ -29,7 +30,9 @@ export default function Home() {
             <div id="buscador" className={styles.center}>
                 <SearchBar />
             </div>
-
+            <div className={styles.center}>
+                <SubjectSelect />
+            </div>
             <div
                 className="recent-posts"
                 style={{

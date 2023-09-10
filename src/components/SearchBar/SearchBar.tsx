@@ -6,15 +6,6 @@ import { useState } from 'react'
 export default function SearchBar() {
     const [search, setSearch] = useState('')
 
-    // Placeholder will be a random value from the array
-    const placeholders = [
-        'Derivadas',
-        'Dinámica',
-        'República',
-        'Torque',
-    ]
-    const placeholder = placeholders[Math.floor(Math.random() * placeholders.length)]
-
     const handleSearchWord = (e: any) => {
         e.preventDefault()
         // Redirect to search page
@@ -32,12 +23,12 @@ export default function SearchBar() {
             <Form onSubmit={handleSearchWord}>
             <InputGroup>
                 <Form.Control
-                    placeholder={placeholder}
+                    placeholder="Buscar por palabra clave"
                     aria-label="Buscador"
                     aria-describedby="Buscador"
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <Button variant="outline-dark" id="button-addon2" type="submit">
+                <Button id="button-addon2" type="submit">
                     Buscar
                 </Button>
             </InputGroup>
