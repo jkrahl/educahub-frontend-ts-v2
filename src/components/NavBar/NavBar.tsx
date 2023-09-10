@@ -49,9 +49,6 @@ export default function NavBar() {
                         <Nav.Link href="/questions" className="text-body">
                             Foro
                         </Nav.Link>
-                        <Nav.Link href="/subjects" className="text-body">
-                            Asignaturas
-                        </Nav.Link>
                         {isLoading ? (
                             <Nav.Link className="text-body">
                                 Cargando...
