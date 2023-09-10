@@ -7,6 +7,7 @@ import NavBar from './components/NavBar/NavBar'
 import SearchResults from './pages/SearchResults/SearchResults'
 import PostView from './pages/PostView/PostView'
 import Subjects from './pages/Subjects/Subjects'
+import SubjectResults from './pages/SubjectResults/SubjectResults'
 import {
     createBrowserRouter,
     RouterProvider,
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
             <Route path="/search" element={<SearchResults />} />
             <Route path="/posts/:postURL" element={<PostView />} />
             <Route path="/subjects" element={<Subjects />} />
+            <Route path="/subjects/:subject/:unit" element={<SubjectResults />} />
         </Route>
     )
 )

@@ -29,7 +29,7 @@ export default function PostView() {
         <main className={styles.main}>
             <Helmet>
                 <title>
-                    {(queryInfo.data?.title || "Post") + ' - ' +( queryInfo.data?.subject || "EducaHub")}
+                    {queryInfo.data?.title + ' - ' + queryInfo.data?.subject + " - EducaHub"}
                 </title>
                 <meta name="description" content={
                     queryInfo.data?.title + ' - ' + queryInfo.data?.description

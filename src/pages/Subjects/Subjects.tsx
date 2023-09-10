@@ -27,7 +27,7 @@ export default function Subjects() {
                 } />
             </Helmet>
             <h1 className={styles.center}>Asignaturas</h1>
-            <div>
+            <div className={styles.subjects}>
                 {queryInfo.isLoading ? ( // If loading
                     <div>
                         <Spinner animation="border" role="status">

@@ -1,0 +1,12 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 80%;
+}
+
+.title {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
