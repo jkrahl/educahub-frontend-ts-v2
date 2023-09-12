@@ -5,7 +5,6 @@ import { useState } from 'react'
 import styles from './SubjectSelect.module.css'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { Helmet } from 'react-helmet'
 import ISubject from '../../interfaces/Subject'
 import { useQuery } from 'react-query'
 
@@ -42,13 +41,6 @@ export default function SubjectSelect() {
 
     return (
         <div>
-            <Helmet>
-                <title>Buscar por materia - EducaHub</title>
-                <meta
-                    name="description"
-                    content="Busca contenido por materia y unidad"
-                />
-            </Helmet>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="exampleForm.SelectCustom" className={styles.box}>
                     <Form.Select
